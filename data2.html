@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raza Ikhsan Al Fitrah | Desain Grafis & Canva Expert</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #5b21aa;
+        --accent-color: #20b2aa;
+        --dark-bg: #1f1f3d;
+        --card-bg: #2b2b4f;
+        --text-light: #f4f4ff;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: var(--card-bg);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+      }
+      .header {
+        text-align: center;
+        padding-bottom: 25px;
+        border-bottom: 3px solid var(--accent-color);
+        margin-bottom: 35px;
+      }
+
+      /* --- STYLE FOTO PROFIL BARU --- */
+      .profile-photo {
+        margin: 0 auto 20px auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Membuat lingkaran */
+        overflow: hidden;
+        border: 4px solid var(--accent-color); /* Border warna Teal */
+        box-shadow: 0 0 15px rgba(32, 178, 170, 0.6); /* Efek glow ringan */
+        transition: transform 0.3s;
+      }
+
+      .profile-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Memastikan gambar pas di lingkaran */
+      }
+      
+      .profile-photo:hover {
+          transform: scale(1.05) rotate(2deg); /* Animasi hover */
+      }
+      /* ------------------------------- */
+
+      .header h1 {
+        color: var(--accent-color);
+        margin-bottom: 5px;
+        font-size: 2.8em;
+      }
+
+      .header .subtitle {
+        font-size: 1.4em;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+
+      .glitch-text {
+        color: var(--primary-color);
+        font-size: 1.6em;
+        font-weight: 700;
+        text-shadow: 0 0 8px var(--primary-color);
+        margin-top: 15px;
+        min-height: 30px;
+      }
+      .data-diri {
+        text-align: left;
+        margin: 20px 0 30px;
+        padding: 15px 30px;
+        border: 1px dashed #4a4a75;
+        border-radius: 8px;
+        background-color: #242440;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .data-diri.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .data-diri table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95em;
+      }
+
+      .data-diri td {
+        padding: 5px 0;
+      }
+
+      .data-diri td:first-child {
+        width: 35%;
+        font-weight: 600;
+        color: var(--accent-color);
+      }
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 20px;
+        font-size: 1em;
+      }
+
+      .contact-info a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 600;
+      }
+
+      .contact-info a:hover {
+        color: var(--primary-color);
+      }
+      section {
+        padding: 50px 20px;
+        margin-bottom: 40px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      section h2 {
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+        font-size: 1.8em;
+      }
+      .projects-grid,
+      .education-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+      }
+
+      .project,
+      .edu-item {
+        background-color: #383863;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      .project.animate,
+      .edu-item.animate {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .project:hover,
+      .edu-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .project h3,
+      .edu-item h3 {
+        color: var(--accent-color);
+        margin-top: 0;
+        font-size: 1.4em;
+      }
+
+      .project img,
+      .edu-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .skills-list span {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        transition: background-color 0.3s;
+      }
+      .skills-list span:hover {
+        background-color: var(--accent-color);
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.2);
+        font-size: 0.9em;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        margin-top: 10%;
+      }
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 15px;
+        }
+        .header h1 {
+          font-size: 2em;
+        }
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .data-diri table td:first-child {
+          width: 45%;
+        }
+        .projects-grid,
+        .education-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+        .project,
+        .edu-item {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        
+        <div class="profile-photo">
+            <img src="foto2.jpg" alt="Foto Profil Raza Ikhsan Al Fitrah" />
+        </div>
+        <h1>RAZA IKHSAN AL FITRAH</h1>
+        <p class="subtitle">Creative Designer | Canva Expert</p>
+
+        <div class="glitch-text" id="glitch-output">
+          Creative Solutions Desain
+        </div>
+
+        <div class="summary" style="padding-top: 15px">
+          <p>
+            Desainer grafis yang bersemangat dengan keahlian mendalam dalam
+            menciptakan konten visual yang menarik dan terukur, terutama
+            menggunakan Canva Pro. Berfokus pada desain *branding*, media
+            sosial, dan materi pemasaran yang efektif.
+          </p>
+        </div>
+      </header>
+        <div class="contact-info">
+          <a href="mailto:azzyycans@gmail.com"
+            ><i class="fas fa-envelope"></i> Email</a
+          >
+          <a
+            href="https://www.linkedin.com/in/raza-ikhsan-al-fitrah-768a59391"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/raaa_zaaaa?igsh=eGdmNHNqdXAxeG1v"
+            target="_blank"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>🛠️ Keahlian & Tools</h2>
+        <div class="skills-list">
+          <span>Canva Pro (Expert)</span>
+          <span>Desain Branding & Logo</span>
+          <span>Desain Media Sosial (Instagram/TikTok)</span>
+          <span>Tipografi & Warna</span>
+          <span>Video Editing (Canva/CapCut)</span>
+          <span>Komunikasi & Teamwork</span>
+          <span>Google Cloud Basics</span>
+        </div>
+      </section>
+
+      <section id="education" class="education-section">
+        <h2>🎓 Riwayat Pendidikan</h2>
+        <div class="education-grid">
+          <div class="edu-item">
+            <h3>STTI SONNY SUGEMA (S1)</h3>
+            <img src="kmpus.jpg" alt="Kampus STTI Sonny Sugema" />
+            <p>Teknik Informatika | 2025 - Sekarang</p>
+            <button class="btn" onclick="openModal('kmpus.jpg')">
+              Lihat Gambar
+            </button>
+          </div>
+
+          <div class="edu-item">
+            <h3>MA NURUL HASBY</h3>
+            <img src="ma.jpg" alt="MA Nurul Hasby" />
+            <p>2022 - 2025</p>
+            <button class="btn" onclick="openModal('ma.jpg')">
+              Lihat Gambar
+            </button>
+          </div>
+
+          <div class="edu-item">
+            <h3>SMP IT NURUL HASBY</h3>
+            <img src="smpit.jpg" alt="SMP IT Nurul Hasby" />
+            <p>2019 - 2022</p>
+            <button class="btn" onclick="openModal('smpit.jpg')">
+              Lihat Gambar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="projects-section">
+        <h2>📜 Lisensi & Sertifikasi</h2>
+        <div class="projects-grid">
+          <div class="project">
+            <h3>Pembuatan Desain Grafis</h3>
+            <img src="blk.png" alt="Sertifikat Pembuatan Desain Grafis BLK" />
+            <p>Kementerian Ketenagakerjaan RI</p>
+            <button class="btn" onclick="openModal('blk.png')">
+              Lihat Sertifikat
+            </button>
+          </div>
+
+          <div class="project">
+            <h3>Belajar Dasar Google Cloud</h3>
+            <img
+              src="dicoding.png"
+              alt="Sertifikat Belajar Dasar Google Cloud"
+            />
+            <p>Dicoding Indonesia</p>
+            <button class="btn" onclick="openModal('dicoding.png')">
+              Lihat Sertifikat
+            </button>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>&copy; 2025 RAZA IKHSAN AL FITRAH - Designed with Creativity</p>
+      </footer>
+
+      <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01" />
+      </div>
+    </div>
+
+    <script>
+      const targetElement = document.getElementById("glitch-output");
+      const originalText = "Creative Solutions Desain";
+      const characters = "Karya Desain perfect".split("");
+
+      function glitchText() {
+        let iterations = 0;
+        const interval = setInterval(() => {
+          targetElement.innerText = originalText
+            .split("")
+            .map((char, index) => {
+              if (index < iterations) {
+                return originalText[index];
+              }
+              return characters[Math.floor(Math.random() * characters.length)];
+            })
+            .join("");
+
+          if (iterations >= originalText.length) {
+            clearInterval(interval);
+            setTimeout(startGlitchLoop, 5000);
+          }
+
+          iterations += 1 / 3;
+        }, 30);
+      }
+
+      function startGlitchLoop() {
+        glitchText();
+      }
+      startGlitchLoop();
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+      const cardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const items = entry.target.querySelectorAll(
+                ".project, .edu-item"
+              );
+              items.forEach((item, index) => {
+                setTimeout(() => {
+                  item.classList.add("animate");
+                }, index * 200);
+              });
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      document
+        .querySelectorAll(".projects-section, .education-section")
+        .forEach((section) => {
+          cardObserver.observe(section);
+        });
+      function openModal(src) {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        modal.style.display = "block";
+        modalImg.src = src;
+      }
+
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
